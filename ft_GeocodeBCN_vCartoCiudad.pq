@@ -5,7 +5,7 @@ Takes an adress as parameter and obtains latitude and longitude. Specific to BCN
 let
     BaseURL = "https://www.cartociudad.es/geocoder/api/geocoder/findJsonp",
     FullAdress = adress & ", Barcelona",
-    FullURL = BaseURL & "?q=" & Uri.EscapeDataString(FullAdress),
+    FullURL = BaseURL & "?q=" & Uri.EscapeDataString(FullAdress) & "&limit=1",
 
     Source = Text.Clean(Text.Trim(Text.FromBinary(Web.Contents(FullURL)))),
 
